@@ -1,26 +1,27 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { Router, Switch, Route } from 'dva/router';
+import { Router, Switch, Route, Redirect } from 'dva/router';
 import Dynamic from 'dva/dynamic';
 
-import App from './App';
+import App from './app';
+
+const redirectToHome = () => <Redirect to="/give-consent" />;
 
 function RouterConfig({
   history, app,
 }) {
-  const Index = Dynamic({
+  const GiveConsent = Dynamic({
     app,
-    // models: () => [
-    //   import('./models/index')
-    // ],
-    component: () => import('./routes/index'),
+    component: () => import('./routes/give-consent'),
   });
 
   return (
     <Router history={history}>
       <App>
         <Switch>
-          <Route exact path="/" component={Index} />
+          <Route exact path="/give-consent" component={GiveConsent} />
+          <Route exact path="/consents" component={GiveConsent} />
+          <Route exact path="/" render={redirectToHome} />
         </Switch>
       </App>
     </Router>

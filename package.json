@@ -8,6 +8,7 @@
   "dependencies": {
     "@material-ui/core": "^3.9.0",
     "axios": "^0.18.0",
+    "axios-mock-adapter": "^1.16.0",
     "babel-polyfill": "^6.26.0",
     "dva": "^2.1.0",
     "dva-loading": "^1.0.4",

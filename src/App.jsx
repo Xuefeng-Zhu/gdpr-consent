@@ -12,24 +12,25 @@ import styles from './index.less';
 function App({
   children, loading, location,
 }) {
+  const { pathname } = location;
   return (
     <Grid container>
       <Grid item xs={2}>
-        <Paper className={styles.sideMenu}>
-          <MenuList>
-            <MenuItem>
-              Give consent
-            </MenuItem>
-          </MenuList>
-          <MenuList>
-            <MenuItem>
-              Collected consents
-            </MenuItem>
-          </MenuList>
-        </Paper>
+        <MenuList>
+          <MenuItem selected={pathname === '/give-consent'}>
+            Give consent
+          </MenuItem>
+        </MenuList>
+        <MenuList>
+          <MenuItem selected={pathname === '/consents'}>
+            Collected consents
+          </MenuItem>
+        </MenuList>
       </Grid>
       <Grid item xs={10}>
-        {children}
+        <Paper className={styles.content}>
+          {children}
+        </Paper>
       </Grid>
     </Grid>
   );

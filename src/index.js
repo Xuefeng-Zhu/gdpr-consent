@@ -1,9 +1,8 @@
 import 'babel-polyfill';
 import dva from 'dva';
 // import Loading from 'dva-loading';
-import {
-  message
-} from 'antd';
+import { message } from 'antd';
+import consentModel from './models/consent';
 
 import './index.less';
 
@@ -17,7 +16,7 @@ const app = dva({
     } else {
       message.error(err);
     }
-  }
+  },
 });
 
 // 2. Plugins
@@ -28,6 +27,7 @@ const app = dva({
 
 // 3. Model
 // Moved to router.js
+app.model(consentModel);
 
 // 4. Router
 app.router(require('./router.jsx'));
