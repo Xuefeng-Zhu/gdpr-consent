@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import { connect } from 'dva';
 import Button from '@material-ui/core/Button';
 import Card from '@material-ui/core/Card';
@@ -47,7 +48,7 @@ class GiveConsent extends React.Component {
     const { dispatch } = this.props;
 
     dispatch({
-      type: 'consent/giveContent',
+      type: 'consent/giveConsent',
       payload: {
         name, email, newletter, ads, statistics,
       },
@@ -112,6 +113,14 @@ class GiveConsent extends React.Component {
     );
   }
 }
+
+GiveConsent.propTypes = {
+  dispatch: PropTypes.func.isRequired,
+  consent: PropTypes.shape({
+    consents: PropTypes.array,
+    meta: PropTypes.object,
+  }).isRequired,
+};
 
 function mapStateToProps() {
   return {};

@@ -14,13 +14,17 @@ function RouterConfig({
     app,
     component: () => import('./routes/give-consent'),
   });
+  const Consents = Dynamic({
+    app,
+    component: () => import('./routes/consents'),
+  });
 
   return (
     <Router history={history}>
       <App>
         <Switch>
           <Route exact path="/give-consent" component={GiveConsent} />
-          <Route exact path="/consents" component={GiveConsent} />
+          <Route exact path="/consents" component={Consents} />
           <Route exact path="/" render={redirectToHome} />
         </Switch>
       </App>

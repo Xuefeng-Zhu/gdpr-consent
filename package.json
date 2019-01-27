@@ -12,6 +12,8 @@
     "babel-polyfill": "^6.26.0",
     "dva": "^2.1.0",
     "dva-loading": "^1.0.4",
+    "dva-subscribe": "git+https://github.com/Xuefeng-Zhu/dva-subscribe.git",
+    "faker": "^4.1.0",
     "flex.css": "^1.1.7",
     "lodash": "^4.17.5",
     "moment": "^2.21.0",
@@ -19,6 +21,7 @@
     "prop-types": "^15.6.1",
     "qs": "^6.5.1",
     "query-string": "^5.1.0",
+    "rc-pagination": "^1.17.8",
     "react": "^16.3.0",
     "react-dom": "^16.3.0"
   },
