@@ -6,7 +6,8 @@
   "globals" : {
     "expect" : false,
     "should" : false,
-    "sinon"  : false
+    "sinon"  : false,
+    "document": true
   },
   "rules": {
     "no-unused-expressions": [0]
