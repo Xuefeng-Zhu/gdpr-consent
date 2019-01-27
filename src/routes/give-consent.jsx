@@ -19,7 +19,7 @@ class GiveConsent extends React.Component {
   state = {
     name: '',
     email: '',
-    newletter: false,
+    newsletter: false,
     ads: false,
     statistics: false,
   }
@@ -43,21 +43,21 @@ class GiveConsent extends React.Component {
   handleFormSubmit = (e) => {
     e.preventDefault();
     const {
-      name, email, newletter, ads, statistics,
+      name, email, newsletter, ads, statistics,
     } = this.state;
     const { dispatch } = this.props;
 
     dispatch({
       type: 'consent/giveConsent',
       payload: {
-        name, email, newletter, ads, statistics,
+        name, email, newsletter, ads, statistics,
       },
     });
   }
 
   render() {
     const {
-      name, email, newletter, ads, statistics,
+      name, email, newsletter, ads, statistics,
     } = this.state;
     return (
       <form className={styles.form} onSubmit={this.handleFormSubmit}>
@@ -80,9 +80,9 @@ class GiveConsent extends React.Component {
                   <FormGroup>
                     <FormControlLabel
                       control={
-                        <Checkbox checked={newletter} value="newletter" onChange={this.handleCheckboxChange} />
+                        <Checkbox checked={newsletter} value="newsletter" onChange={this.handleCheckboxChange} />
                     }
-                      label="Receive newletter"
+                      label="Receive newsletter"
                     />
                     <FormControlLabel
                       control={
